@@ -55,16 +55,9 @@
       </div>
 
       <div class="write-layout">
-        <!-- 리뷰 작성 폼
-             지금은 필수 항목을 다 채우고 '리뷰 등록하기'를 누르면 등록 완료 모달(#review-done)이 떠요.
-             Flask에 연결할 때: method="post" enctype="multipart/form-data" action="리뷰 저장 주소" 로 바꿔 주세요.
-             등록 중에는 form에 class="is-submitting"을 붙이면 버튼이 회색으로 바뀌어요.
-             입력 오류 표시(빨간 글씨)는 Flask에서 붙일 수 있게 CSS만 준비돼 있어요:
-               폼 맨 위 <div class="error-notice"><strong>리뷰를 등록하지 못했어요</strong>...</div>
-               칸에 class="input-box is-error", 칸 아래 <p class="error-text">리뷰 제목을 입력해 주세요.</p> -->
         <form class="write-form" action="review_write.html#review-done" method="get">
 
-          <!-- 리뷰할 작품 (주문 내역에서 자동으로 채워지는 부분) -->
+          <!-- 리뷰 대상 작품 -->
           <div class="order-card">
             <img src="images/review/product.jpg" alt="뜨개 꽃 키링" data-product-image>
             <div class="info">

@@ -26,10 +26,6 @@
   line-height: 1.5;
 }
 
-.preview-dialog .preview-dialog-note {
-  font-size: 14px;
-}
-
 .preview-dialog-actions {
   display: flex;
   flex-wrap: wrap;
