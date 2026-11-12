@@ -1,0 +1,133 @@
+.market-header {
+  --market-ink: #191919;
+  --market-muted: #595959;
+  --market-line: #e4e4e1;
+  color: var(--market-ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.market-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.market-header-top,
+.market-search,
+.market-trending,
+.market-account,
+.market-shortcut {
+  display: flex;
+  align-items: center;
+}
+
+.market-header-top {
+  min-height: 80px;
+}
+
+.market-header .market-logo {
+  flex: 0 0 272px;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  white-space: nowrap;
+}
+
+.market-header--register .market-logo {
+  flex-basis: 150px;
+}
+
+.market-search {
+  gap: 8px;
+  width: 504px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #767671;
+  border-radius: 4px;
+}
+
+.market-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+}
+
+.market-search input::placeholder {
+  color: var(--market-muted);
+  opacity: 1;
+}
+
+.market-trending {
+  gap: 8px;
+  padding-left: 20px;
+  white-space: nowrap;
+}
+
+.market-account {
+  flex: 1;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.market-shortcut {
+  gap: 6px;
+  padding: 8px;
+  white-space: nowrap;
+}
+
+.market-shortcut img {
+  opacity: 0.65;
+}
+
+.market-sign-in {
+  margin-left: 8px;
+  padding: 0 12px 0 28px;
+  border-left: 1px solid var(--market-line);
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .market-header .market-logo {
+    flex-basis: 150px;
+  }
+
+  .market-search {
+    width: clamp(180px, 35vw, 504px);
+  }
+}
+
+@media (max-width: 850px) {
+  .market-header-top {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .market-header .market-logo {
+    flex-basis: auto;
+  }
+
+  .market-search {
+    order: 1;
+    width: 100%;
+  }
+
+  .market-trending {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .market-shortcut {
+    display: none;
+  }
+
+  .market-sign-in {
+    border-left: 0;
+  }
+}

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>상품 목록 | 깃든마켓</title>
+    <link rel="stylesheet" href="static/css/market-header.css" />
+    <link rel="stylesheet" href="static/css/product-list.css" />
+  </head>
+  <body class="catalog-page">
+    <header class="market-header catalog-container">
+      <div class="market-header-top">
+        <a class="market-logo" href="product_list.html">깃든마켓</a>
+        <div class="market-search">
+          <input type="search" placeholder="머그가 필요한 순간" aria-label="작품 검색" />
+          <img src="static/images/product-register/search.svg" alt="" />
+        </div>
+        <span class="market-trending">
+          <strong>2</strong> 뜨개 키링
+          <img src="static/images/product-register/trending-chevron.svg" alt="" />
+        </span>
+        <nav class="market-account" aria-label="계정">
+          <span class="market-shortcut"><img src="assets/heart.svg" alt="" />관심</span>
+          <span class="market-shortcut"><img src="assets/user.svg" alt="" />내 정보</span>
+          <span class="market-shortcut"><img src="assets/cart.svg" alt="" />장바구니</span>
+          <a class="market-sign-in" href="templates/login.html">로그인</a>
+        </nav>
+      </div>
+      <nav class="catalog-nav" aria-label="작품 탐색">
+        <a href="#collections"><img src="assets/grid.svg" alt="" />전체 카테고리</a>
+        <a href="#featured" aria-current="page">추천 작품</a>
+        <a href="#collections">주제별 모음</a>
+        <a href="#article">아티클</a>
+        <a class="catalog-register" href="templates/product_register.html">상품 등록</a>
+      </nav>
+    </header>
+    <main>
+      <h1 class="catalog-visually-hidden">상품 목록</h1>
+      <section class="catalog-banners" aria-label="이달의 기획">
+        <div class="catalog-banner catalog-banner--coupon">
+          <div class="catalog-ticket" aria-hidden="true">
+            <img src="static/images/product-list/coupon.svg" alt="" />
+            <small>FIRST ORDER</small>
+            <strong>10%</strong>
+            <span>01</span>
+          </div>
+          <h2>깃든마켓 오픈 기념<br />첫 주문 10% 쿠폰</h2>
+        </div>
+        <div class="catalog-banner catalog-banner--knits">
+          <img src="static/images/product-list/knits.png" alt="" />
+          <div><small>시즌 기획전</small><h2>찬바람이 불기 시작할 때<br />한겨울 뜨개 소품 모음</h2></div>
+        </div>
+        <div class="catalog-banner catalog-banner--ceramics">
+          <img src="static/images/product-list/ceramics.png" alt="" />
+          <div><small>〈흙으로 만든 하루〉</small><h2>클레이하루<br />첫 개인전 개최</h2></div>
+        </div>
+      </section>
+
+      <div class="catalog-container">
+        <div class="catalog-feature" id="featured">
+          <article id="article">
+            <div class="catalog-cover">
+              <img src="static/images/product-list/mug.png" alt="" />
+              <div class="catalog-cover-copy">
+                <h2>손에 닿는<br />도자기의 결</h2>
+                <p>빛이 닿는 면마다 달라지는 세로결.<br />매일 손이 가는 머그 한 점을 소개합니다.</p>
+                <span>아티클 읽기 ↗</span>
+              </div>
+            </div>
+            <div class="catalog-cover-caption">
+              <span>세로결 도자기 머그 · @clay_haru</span>
+              <span aria-hidden="true">←　━ ─ ─　→</span>
+            </div>
+          </article>
+
+          <section class="catalog-picks" aria-labelledby="picks-title">
+            <h2 id="picks-title">추천 작품</h2>
+            <ul>
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/linen.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@linen_sori</small>
+                  <h3>린넨 스트링 파우치</h3>
+                  <strong>16,000원</strong>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/vase.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@clay_onu</small>
+                  <h3>백유 미니 화병</h3>
+                  <strong>15,000원</strong>
+                </div>
+              </a>
+            </li>
+            </ul>
+          </section>
+        </div>
+
+        <section class="catalog-promotions" aria-labelledby="promotion-title">
+          <h2 id="promotion-title">기획전</h2>
+          <div class="catalog-promotions-grid">
+            <div class="catalog-promotion catalog-promotion--collab">
+              <img src="static/images/product-list/linen.png" alt="" />
+              <img src="static/images/product-list/beads.png" alt="" />
+              <div><h3>작가 협업</h3><p>린넨과 비즈의 만남</p></div>
+            </div>
+            <div class="catalog-promotion">
+              <img src="static/images/product-list/bookmark.png" alt="" />
+              <div><h3>세트 기획</h3><p>엽서와 책갈피를 한 세트로</p></div>
+            </div>
+            <div class="catalog-promotion">
+              <img src="static/images/product-list/sunflower.png" alt="" />
+              <div><h3>할인</h3><p>키링부터 문구까지</p></div>
+            </div>
+            <div class="catalog-promotion">
+              <img src="static/images/product-list/stickers.png" alt="" />
+              <div><h3>타임특가</h3><p>꽃과 리본 스티커</p></div>
+            </div>
+          </div>
+        </section>
+
+        <div id="collections">
+        <section class="catalog-collection" id="desk" aria-labelledby="desk-title">
+          <h2 id="desk-title">책상 위 작은 물건</h2>
+          <p>책을 펼치고, 엽서를 쓰고, 꽃 한 송이를 꽂는 자리.</p>
+          <ul class="catalog-products">
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/vase.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@clay_onu</small>
+                  <h3>백유 미니 화병</h3>
+                  <strong>15,000원</strong>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/bookmark.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@paper_momo</small>
+                  <h3>책장 그림 책갈피</h3>
+                  <strong>4,500원</strong>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/postcard.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@slow_post</small>
+                  <h3>식물 드로잉 엽서</h3>
+                  <strong>6,000원</strong>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <a class="catalog-more" href="#catalog-pages">이 주제 작품 더 보기 →</a>
+        </section>
+        <section class="catalog-collection" id="bag" aria-labelledby="bag-title">
+          <h2 id="bag-title">가방에 넣고 다니는 것들</h2>
+          <p>매일 챙기는 물건에 손으로 만든 디테일을 더해요.</p>
+          <ul class="catalog-products">
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/linen.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@linen_sori</small>
+                  <h3>린넨 스트링 파우치</h3>
+                  <strong>16,000원</strong>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/sunflower.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@thread_sun</small>
+                  <h3>뜨개 해바라기 키링</h3>
+                  <strong>12,000원</strong>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="catalog-product" href="templates/product_detail.html">
+                <div class="catalog-product-photo">
+                  <img src="static/images/product-list/beads.png" alt="" />
+                  <img class="catalog-heart" src="assets/heart.svg" alt="" />
+                </div>
+                <div class="catalog-product-info">
+                  <small>@maker_bora</small>
+                  <h3>청록 비즈 팔찌</h3>
+                  <strong>9,000원</strong>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <a class="catalog-more" href="#catalog-pages">이 주제 작품 더 보기 →</a>
+        </section>
+        </div>
+        <nav class="catalog-pages" id="catalog-pages" aria-label="작품 모음 페이지">
+          <a href="#desk" aria-label="1페이지 책상 위 작은 물건">1</a>
+          <a href="#bag" aria-label="2페이지 가방에 넣고 다니는 것들">2</a>
+        </nav>
+
+        <footer class="catalog-footer">깃든마켓</footer>
+      </div>
+    </main>
+  </body>
+</html>

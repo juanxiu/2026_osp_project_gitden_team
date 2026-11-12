@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>상품 등록하기 | 깃든 마켓</title>
     <link rel="stylesheet" href="../static/css/product.css" />
+    <link rel="stylesheet" href="../static/css/market-header.css" />
+    <link rel="stylesheet" href="../static/css/product-register.css" />
   </head>
-  <body>
+  <body class="register-page">
     <main>
       <div class="pg">
-        <!-- 돌아가기 (누르면 '작성 중인 내용이 사라져요' 모달이 열립니다: #leave-modal) -->
+        <header class="market-header market-header--register">
+          <div class="market-header-top">
+            <a class="market-logo" href="../product_list.html">깃든마켓</a>
+            <div class="market-search">
+              <input type="search" placeholder="머그가 필요한 순간" aria-label="작품 검색" />
+              <img src="../static/images/product-register/search.svg" alt="" />
+            </div>
+            <span class="market-trending">
+              <strong>2</strong> 뜨개 키링
+              <img src="../static/images/product-register/trending-chevron.svg" alt="" />
+            </span>
+            <nav class="market-account" aria-label="계정">
+              <span class="market-shortcut"><img src="../assets/heart.svg" alt="" />관심</span>
+              <span class="market-shortcut"><img src="../assets/user.svg" alt="" />내 정보</span>
+              <span class="market-shortcut"><img src="../assets/cart.svg" alt="" />장바구니</span>
+              <a class="market-sign-in" href="login.html">로그아웃</a>
+            </nav>
+          </div>
+        </header>
+
         <div class="pg-back">
           <a href="#leave-modal">
-            <svg
-              width="20"
-              height="18"
-              viewBox="0 0 21 19"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M6 1L1 6l5 5M1 6h13c4 0 6 3 6 6s-2 6-6 6H6" />
-            </svg>
+            <img src="../static/images/product-register/return.svg" alt="" />
             돌아가기
           </a>
         </div>
@@ -42,12 +51,8 @@
         </div>
         -->
 
-        <form
-          class="pg-form"
-          action="product_result.html"
-          method="post"
-          enctype="multipart/form-data"
-        >
+        <!-- 정적 과제 화면입니다. 등록 버튼은 예시 결과 화면으로 이동합니다. -->
+        <form class="pg-form">
           <div class="pg-grid">
             <!-- ===== 왼쪽: 입력 폼 ===== -->
             <div class="pg-card">
@@ -100,20 +105,7 @@
                 <label class="pg-label" for="address">거래 희망 장소 *</label>
                 <div class="pg-control">
                   <div class="pg-input-icon">
-                    <svg
-                      width="16"
-                      height="22"
-                      viewBox="0 0 16 22"
-                      fill="none"
-                      stroke="#8a8a85"
-                      stroke-width="1.6"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M8 21C2.5 14.5 1 11.5 1 8.5a7 7 0 0 1 14 0c0 3-1.5 6-7 12.5z"
-                      />
-                    </svg>
+                    <img src="../static/images/product-register/pin.svg" alt="" />
                     <input
                       class="pg-input"
                       type="text"
@@ -171,30 +163,31 @@
                 </div>
               </div>
 
-              <div class="pg-field">
+              <div class="pg-field pg-field--picture">
                 <label class="pg-label" for="picture">사진 *</label>
                 <div class="pg-control">
-                  <input
-                    class="pg-file"
-                    type="file"
-                    id="picture"
-                    name="picture"
-                    accept=".png,.jpg,.jpeg,.webp"
-                    multiple
-                    required
-                  />
-                  <!-- 미리보기: 사진을 고르면 이 자리에 80px 썸네일이 쌓입니다(첫 번째가 대표). 아래는 비어 있는 상태 -->
-                  <div class="pg-thumbs">
-                    <!-- 선택한 사진 예시:
-                    <div class="pg-thumb"><img class="pg-photo" src="..." alt=""><span class="pg-badge-first">대표</span></div>
-                    -->
-                    <label
-                      class="pg-thumb pg-thumb--add"
-                      for="picture"
-                      aria-label="사진 추가"
-                    ></label>
+                  <div class="pg-file-picker">
+                    <input
+                      class="pg-file"
+                      type="file"
+                      id="picture"
+                      name="picture"
+                      accept=".png,.jpg,.jpeg,.webp"
+                      aria-describedby="picture-help"
+                      multiple
+                      required
+                    />
+                    <span class="pg-file-button" aria-hidden="true">파일 선택</span>
+                    <span class="pg-file-empty" aria-hidden="true">선택된 파일 없음</span>
+                    <span class="pg-file-selected" aria-hidden="true">사진이 선택되었어요</span>
+                    <span class="pg-file-count" aria-hidden="true">0 / 5</span>
                   </div>
-                  <p class="pg-help">
+                  <div class="pg-thumbs">
+                    <label class="pg-add-photo" for="picture">
+                      <img src="../static/images/product-register/add-photo.svg" alt="사진 추가" />
+                    </label>
+                  </div>
+                  <p class="pg-help" id="picture-help">
                     첫 번째 사진이 대표 사진이 돼요. (최대 5장 · JPG, PNG, WebP
                     · 장당 5MB)
                   </p>
@@ -202,9 +195,9 @@
               </div>
 
               <div class="pg-actions">
-                <button class="pg-btn pg-btn--dark pg-btn--block" type="submit">
+                <a class="pg-btn pg-btn--dark pg-btn--block" href="product_result.html">
                   등록하기
-                </button>
+                </a>
               </div>
             </div>
 
@@ -220,40 +213,35 @@
                 </p>
               </div>
 
-              <!-- 지도 API(카카오맵 등)를 붙일 자리: 아래 .pg-map 안의 그림을 지우고 지도를 넣으세요 -->
-              <div class="pg-map" id="map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357c988459902d69%3A0xf2536b3850f9d80d!2z7J207ZmU7Jes7J6Q64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1794479405145!5m2!1sko!2skr"
-                  width="100%"
-                  height="100%"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-                <span class="pg-map-hint"
-                  >원하면 지도를 눌러 핀을 찍어보세요.</span
-                >
-                <span class="pg-map-note"
-                  >캠퍼스 밖에는 핀을 찍을 수 없어요.</span
-                >
+              <div class="pg-map pg-register-map">
+                <div class="pg-map-drawing" aria-hidden="true">
+                  <img class="pg-map-road-bottom" src="../static/images/product-register/road-horizontal.svg" alt="" />
+                  <img class="pg-map-road-left" src="../static/images/product-register/road-vertical.svg" alt="" />
+                  <img class="pg-map-road-right" src="../static/images/product-register/road-vertical.svg" alt="" />
+                  <div class="pg-campus-boundary"></div>
+                  <img class="pg-map-path-cross" src="../static/images/product-register/path-horizontal.svg" alt="" />
+                  <img class="pg-map-path-west" src="../static/images/product-register/path-vertical.svg" alt="" />
+                  <img class="pg-map-path-east" src="../static/images/product-register/path-vertical.svg" alt="" />
+                  <img class="pg-map-lawn" src="../static/images/product-register/lawn.svg" alt="" />
+                  <img class="pg-map-pond" src="../static/images/product-register/pond.svg" alt="" />
+                  <div class="pg-campus-building pg-campus-west"></div>
+                  <div class="pg-campus-building pg-campus-hakmun">학문관</div>
+                  <div class="pg-campus-building pg-campus-ecc">ECC</div>
+                  <div class="pg-campus-building pg-campus-hall">대강당</div>
+                  <div class="pg-campus-building pg-campus-south"></div>
+                  <span class="pg-campus-name">이화여대 캠퍼스</span>
+                  <span class="pg-campus-gate">정문</span>
+                </div>
+                <div class="pg-zoom" aria-hidden="true">
+                  <button type="button" disabled>+</button>
+                  <button type="button" disabled>−</button>
+                </div>
+                <span class="pg-map-hint">원하면 지도를 눌러 핀을 찍어보세요.</span>
+                <span class="pg-map-note">캠퍼스 밖에는 핀을 찍을 수 없어요.</span>
               </div>
 
               <div class="pg-selected">
-                <svg
-                  width="16"
-                  height="22"
-                  viewBox="0 0 16 22"
-                  fill="none"
-                  stroke="#8a8a85"
-                  stroke-width="1.6"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M8 21C2.5 14.5 1 11.5 1 8.5a7 7 0 0 1 14 0c0 3-1.5 6-7 12.5z"
-                  />
-                </svg>
+                <img src="../static/images/product-register/pin.svg" alt="" />
                 <div>
                   <strong>선택한 장소가 없어요.</strong>
                   <span>핀을 찍지 않고 직접 입력해도 돼요.</span>
@@ -288,12 +276,11 @@
             <p>지금 나가면 입력한 내용과 사진이 저장되지 않아요.</p>
             <div class="pg-modal-btns">
               <a class="pg-btn pg-btn--outline" href="#">계속 작성하기</a>
-              <a class="pg-btn pg-btn--dark" href="javascript:history.back()"
-                >나가기</a
-              >
+              <a class="pg-btn pg-btn--dark" href="../product_list.html">나가기</a>
             </div>
           </div>
         </div>
+        <footer class="pg-register-footer">깃든마켓</footer>
       </div>
     </main>
   </body>
