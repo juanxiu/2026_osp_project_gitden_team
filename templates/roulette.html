@@ -6,6 +6,8 @@
     <title>오늘의 룰렛 | 깃든마켓</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="stylesheet" href="../static/roulette.css">
+    <link rel="stylesheet" href="../static/css/preview-dialog.css">
+    <script src="../static/js/roulette-preview.js" defer></script>
 </head>
 <body>
     <!-- 공통 헤더 (로그인 후) -->
@@ -56,10 +58,40 @@
                  alt="룰렛 이미지 (튤립 화분, 포근방석, 햇살창문, 꽝)">
 
             <p class="roulette-message">오늘의 행운을 확인해 보세요.</p>
-            <button class="roulette-button" type="button">룰렛 돌리기</button>
+            <button class="roulette-button" type="button" aria-haspopup="dialog">룰렛 돌리기</button>
             <p class="roulette-hint">꽝 또는 꾸미기 아이템 중 하나를 만나요.</p>
         </section>
     </main>
+
+    <dialog class="preview-dialog roulette-result" id="roulette-result" aria-labelledby="roulette-result-title" aria-describedby="roulette-result-message">
+        <h2 id="roulette-result-title">룰렛 결과</h2>
+        <div class="roulette-result-art" data-result-art="miss" aria-hidden="true" hidden>
+            <div class="roulette-art-layers">
+                <img src="../static/images/roulette-results/miss-ground-shadow.svg" alt="" style="--x: 21.76%; --y: 73.53%">
+                <img src="../static/images/roulette-results/miss-resting-arm.svg" alt="" style="--x: 21.09%; --y: 52.35%">
+                <img src="../static/images/roulette-results/miss-waving-arm.svg" alt="" style="--x: 59.12%; --y: 41.12%">
+                <img src="../static/images/roulette-results/miss-feet.svg" alt="" style="--x: 32.24%; --y: 71.18%">
+                <img src="../static/images/roulette-results/miss-bean-body.svg" alt="" style="--x: 24.25%; --y: 24.99%">
+                <img src="../static/images/roulette-results/miss-face.svg" alt="" style="--x: 29.71%; --y: 46.53%">
+                <img src="../static/images/roulette-results/miss-lucky-clover.svg" alt="" style="--x: 70.47%; --y: 56.45%">
+            </div>
+        </div>
+        <div class="roulette-result-art" data-result-art="tulip" aria-hidden="true" hidden>
+            <div class="roulette-art-layers">
+                <img src="../static/images/roulette-results/tulip-ground-shadow.svg" alt="" style="--x: 27.65%; --y: 79.12%">
+                <img src="../static/images/roulette-results/tulip-tulip-stems.svg" alt="" style="--x: 40.88%; --y: 34.41%">
+                <img src="../static/images/roulette-results/tulip-leaves.svg" alt="" style="--x: 30.83%; --y: 43.31%">
+                <img src="../static/images/roulette-results/tulip-left-tulip.svg" alt="" style="--x: 32.05%; --y: 17.18%">
+                <img src="../static/images/roulette-results/tulip-right-tulip.svg" alt="" style="--x: 50.66%; --y: 23.87%">
+                <img src="../static/images/roulette-results/tulip-flowerpot.svg" alt="" style="--x: 32.65%; --y: 58.24%">
+                <img src="../static/images/roulette-results/tulip-sparkles.svg" alt="" style="--x: 22.94%; --y: 22.94%">
+            </div>
+        </div>
+        <p id="roulette-result-message"></p>
+        <form class="preview-dialog-actions" method="dialog">
+            <button class="preview-dialog-button preview-dialog-primary" autofocus>확인</button>
+        </form>
+    </dialog>
 
     <footer class="site-footer">
         <span>깃든마켓</span>

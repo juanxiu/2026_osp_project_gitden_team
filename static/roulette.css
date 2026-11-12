@@ -219,3 +219,29 @@ button, input {
   font-size: 10px;
   color: #888888;
 }
+.roulette-result-art {
+  position: relative;
+  width: min(320px, 100%);
+  aspect-ratio: 1;
+  margin: 16px auto 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff7e6;
+  container-type: inline-size;
+}
+
+.roulette-art-layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 320px;
+  transform-origin: top left;
+  scale: calc(100cqw / 320px);
+}
+
+.roulette-art-layers img {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+}

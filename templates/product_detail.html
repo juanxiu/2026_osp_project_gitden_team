@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>상품 상세 | 깃든 마켓</title>
     <link rel="stylesheet" href="../static/css/product.css" />
+    <script src="../static/js/product-preview.js" defer></script>
   </head>
-  <body>
+  <body data-product-page="detail">
     <main>
       <div class="pg">
         <div class="pg-back">
@@ -29,8 +30,8 @@
         </div>
 
         <div class="pg-crumb" role="navigation" aria-label="경로">
-          <a href="../product_list.html">홈</a><span>›</span><a href="#">작품</a><span>›</span
-          ><span>키링</span>
+          <a href="../product_list.html">홈</a><span>›</span><a href="../product_list.html">작품</a><span>›</span
+          ><span data-product-field="category">키링</span>
         </div>
 
         <!-- ===== 상단: 왼쪽 큰 사진 / 오른쪽 구매 정보 ===== -->
@@ -41,6 +42,7 @@
                 <img
                   src="../static/images/product_1.jpeg"
                   alt="뜨개 꽃 키링 사진 1"
+                  data-product-image="thumbnail"
                 />
               </div>
               <div class="pg-thumb">
@@ -70,7 +72,7 @@
             </div>
 
             <div class="pg-main">
-              <img src="../static/images/product_1.jpeg" alt="뜨개 꽃 키링" />
+              <img src="../static/images/product_1.jpeg" alt="뜨개 꽃 키링" data-product-image />
               <span class="pg-count">1 / 5</span>
               <a
                 class="pg-heart"
@@ -88,7 +90,7 @@
 
           <div class="pg-info">
             <a class="pg-seller" href="#">
-              <i></i>ewha_creator02
+              <i></i><span data-product-field="seller">ewha_creator02</span>
               <svg
                 width="6"
                 height="11"
@@ -102,8 +104,8 @@
                 <path d="M1 1l4.5 4.5L1 10" />
               </svg>
             </a>
-            <h1 class="pg-name">뜨개 꽃 키링</h1>
-            <p class="pg-price">8,000원</p>
+            <h1 class="pg-name" data-product-field="name">뜨개 꽃 키링</h1>
+            <p class="pg-price" data-product-field="price">8,000원</p>
 
             <dl class="pg-rows">
               <div>
@@ -154,9 +156,9 @@
                   />
                 </svg>
               </a>
-              <a class="pg-btn pg-btn--outline pg-btn--lg" href="#"
-                >커미션 신청하기</a
-              >
+              <a class="pg-btn pg-btn--outline pg-btn--lg" href="../commission_request.html?product=flower-keyring" data-product-link>
+                커미션 신청하기
+              </a>
               <a class="pg-btn pg-btn--dark pg-btn--lg" href="#login-modal"
                 >구매하기</a
               >
@@ -173,18 +175,22 @@
 
           <div class="pg-tablist" role="tablist">
             <label for="tab-desc">상품 설명</label>
-            <label for="tab-review">리뷰 12</label>
+            <label for="tab-review" data-product-field="reviewTab">리뷰 6</label>
             <label for="tab-trade">거래 안내</label>
             <label for="tab-map">지도 보기</label>
           </div>
 
           <div class="pg-panels">
             <div class="pg-panel pg-panel-desc">
-              <p>코바늘로 정성껏 뜬 데이지 꽃 키링이에요. 크기는 약 6cm예요.</p>
+              <p data-product-field="description">코바늘로 정성껏 뜬 데이지 꽃 키링이에요. 크기는 약 6cm예요.</p>
             </div>
 
-            <div class="pg-panel pg-panel-review">
-              <p>리뷰 목록이 들어갈 자리예요. (리뷰 화면 연결)</p>
+            <div class="pg-panel pg-panel-review" id="reviews">
+              <p data-product-field="reviewSummary">뜨개 꽃 키링의 리뷰 6개를 볼 수 있어요.</p>
+              <div class="pg-review-actions">
+                <a class="pg-btn pg-btn--outline" href="../review_list.html" data-product-link>리뷰 목록 보기</a>
+                <a class="pg-btn pg-btn--dark" href="../review_write.html" data-product-link>리뷰 작성</a>
+              </div>
             </div>
 
             <div class="pg-panel pg-panel-trade">
@@ -258,7 +264,7 @@
           <ul class="pg-related">
             <li class="pg-card-item">
               <div class="pg-thumbbox">
-                <a href="#" aria-label="청록 비즈 팔찌">
+                <a href="product_detail.html?product=beads" aria-label="청록 비즈 팔찌">
                   <img
                     src="../static/images/product_2.jpg"
                     alt="청록 비즈 팔찌"
@@ -280,7 +286,7 @@
             </li>
             <li class="pg-card-item">
               <div class="pg-thumbbox">
-                <a href="#" aria-label="뜨개 해바라기 키링">
+                <a href="product_detail.html?product=sunflower" aria-label="뜨개 해바라기 키링">
                   <img
                     src="../static/images/product_3.jpg"
                     alt="뜨개 해바라기 키링"
@@ -302,7 +308,7 @@
             </li>
             <li class="pg-card-item">
               <div class="pg-thumbbox">
-                <a href="#" aria-label="식물 드로잉 엽서">
+                <a href="product_detail.html?product=postcard" aria-label="식물 드로잉 엽서">
                   <img
                     src="../static/images/product_4.png"
                     alt="식물 드로잉 엽서"
@@ -324,7 +330,7 @@
             </li>
             <li class="pg-card-item">
               <div class="pg-thumbbox">
-                <a href="#" aria-label="린넨 스트링 파우치">
+                <a href="product_detail.html?product=linen" aria-label="린넨 스트링 파우치">
                   <img
                     src="../static/images/product_5.jpg"
                     alt="린넨 스트링 파우치"
