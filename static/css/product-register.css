@@ -1,0 +1,232 @@
+.register-page {
+  margin: 0;
+}
+
+.register-page .pg {
+  box-sizing: border-box;
+  max-width: 1328px;
+  padding-bottom: 0;
+}
+
+.register-page .pg-back {
+  height: 49px;
+}
+
+@media (min-width: 1001px) {
+  .register-page .pg-grid {
+    min-height: 880px;
+  }
+
+  .register-page .pg-form .pg-card {
+    padding: 31px 31px 33px;
+  }
+}
+
+.register-page .pg-help {
+  line-height: 20px;
+}
+
+.register-page .pg-input-icon img {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  pointer-events: none;
+}
+
+.register-page .pg-select {
+  background-image: url("../images/product-register/select-chevron.svg");
+}
+
+.register-page .pg-track {
+  background: url("../images/product-register/commission-off.svg") no-repeat;
+}
+
+.register-page .pg-track::after {
+  content: none;
+}
+
+.register-page .pg-switch input:checked + .pg-track::after {
+  content: "";
+}
+
+.register-page .pg-field--picture .pg-label {
+  padding: 14px 0;
+}
+
+.register-page .pg-field--picture .pg-control {
+  gap: 12px;
+}
+
+.register-page .pg-thumbs {
+  margin-top: 0;
+}
+
+.pg-add-photo {
+  display: block;
+  cursor: pointer;
+}
+
+.pg-add-photo img {
+  display: block;
+}
+
+.pg-file-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid var(--ctrl);
+  border-radius: 4px;
+  color: var(--sub);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.register-page .pg-file-picker .pg-file {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pg-file-picker:focus-within {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.pg-file-button {
+  flex: none;
+  padding: 6px 12px;
+  border: 1px solid var(--ctrl);
+  border-radius: 4px;
+  background: var(--surf);
+  color: var(--ink);
+  line-height: 20px;
+}
+
+.pg-file-count {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.pg-file-selected,
+.pg-file:valid ~ .pg-file-empty,
+.pg-file:valid ~ .pg-file-count {
+  display: none;
+}
+
+.pg-file:valid ~ .pg-file-selected {
+  display: inline;
+}
+
+.register-page .pg-form .pg-map-panel {
+  padding: 23px;
+}
+
+.register-page .pg-register-map {
+  flex: none;
+  min-height: 0;
+  aspect-ratio: 520 / 688;
+  container-type: inline-size;
+}
+
+.pg-map-drawing {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 520px;
+  height: 688px;
+  transform-origin: top left;
+  scale: calc((100cqw + 2px) / 520px);
+}
+
+.pg-map-drawing > * {
+  position: absolute;
+}
+
+.pg-map-road-bottom { top: 584px; left: -7px; }
+.pg-map-road-left { top: -6px; left: 20px; }
+.pg-map-road-right { top: -6px; left: 483px; }
+.pg-map-path-cross { top: 339px; left: 67px; }
+.pg-map-path-west { top: 77px; left: 223px; }
+.pg-map-path-east { top: 77px; left: 374px; }
+.pg-map-lawn { top: 96px; left: 83px; }
+.pg-map-pond { top: 426px; left: 395px; }
+
+.pg-campus-boundary {
+  top: 48px;
+  left: 52px;
+  width: 416px;
+  height: 550px;
+  border: 2px dashed #5f9e6a;
+  border-radius: 24px;
+  background: #dcebd8;
+}
+
+.pg-campus-building,
+.pg-campus-name,
+.pg-campus-gate {
+  color: #3d6b45;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.pg-campus-building {
+  padding: 28px 0 0 20px;
+  white-space: nowrap;
+  border-radius: 8px;
+  background: #c3d6bf;
+}
+
+.pg-campus-west { top: 413px; left: 78px; width: 104px; height: 83px; }
+.pg-campus-hakmun { top: 103px; left: 260px; width: 104px; height: 96px; }
+.pg-campus-ecc { top: 399px; left: 260px; width: 104px; height: 83px; }
+.pg-campus-hall { top: 103px; left: 395px; width: 62px; height: 96px; padding-left: 10px; }
+.pg-campus-south { top: 509px; left: 291px; width: 73px; height: 62px; }
+.pg-campus-name { top: 24px; left: 62px; }
+.pg-campus-gate { top: 578px; left: 239px; }
+
+.register-page .pg-zoom button:disabled {
+  color: var(--ink);
+  cursor: default;
+}
+
+.register-page .pg-map-note {
+  bottom: 6px;
+}
+
+.register-page .pg-selected {
+  padding-top: 4px;
+}
+
+.register-page .pg-selected strong {
+  color: var(--sub);
+}
+
+.pg-register-footer {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  margin-top: 48px;
+  color: #6b6b66;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .register-page .pg {
+    padding-inline: 16px;
+  }
+
+  .register-page .pg-form .pg-map-panel {
+    padding: 16px;
+  }
+
+  .register-page .pg-map-hint {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}

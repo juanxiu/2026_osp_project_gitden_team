@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리뷰 상세 | 깃든마켓</title>
+  <link rel="stylesheet" href="css/review.css">
+</head>
+<body class="review-page">
+  <!-- ===== 공통 헤더 ===== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="product_list.html" class="logo">깃든마켓</a>
+        <form class="search" action="#" role="search">
+          <input type="search" name="q" placeholder="머그가 필요한 순간" aria-label="작품 검색">
+          <button type="submit" aria-label="검색"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+        </form>
+        <div class="popular"><b>2</b> 뜨개 키링 <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></div>
+        <nav class="header-menu" aria-label="내 메뉴">
+          <a href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>관심</a>
+          <a href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>내 정보</a>
+          <a href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>장바구니</a>
+          <span class="divider"></span>
+          <a href="templates/login.html">로그인</a>
+        </nav>
+      </div>
+      <div class="header-bottom">
+        <a href="#" class="all-category"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>전체 카테고리</a>
+        <span class="divider"></span>
+        <nav class="category-nav" aria-label="카테고리">
+          <a href="product_list.html" class="active">추천 작품</a>
+          <a href="#">주제별 모음</a>
+          <a href="#">아티클</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+      <nav class="breadcrumb" aria-label="현재 위치">
+        <a href="#">홈</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <a href="#">작품</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <a href="#">키링</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <a href="templates/product_detail.html">뜨개 꽃 키링</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <a href="review_list.html">리뷰</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <span class="current">리뷰 상세</span>
+      </nav>
+
+      <a href="review_list.html" class="back-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>리뷰 목록으로</a>
+
+      <div class="detail-layout">
+        <!-- 사진 보기 -->
+        <section class="viewer" aria-label="리뷰 사진">
+          <div class="photo-wrap">
+            <img class="main-photo" src="images/review/review1.jpg" alt="student02님이 올린 리뷰 사진 1">
+            <a href="#" class="nav prev" aria-label="이전 사진"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+            <a href="#" class="nav next" aria-label="다음 사진"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+            <span class="page">1 / 2</span>
+          </div>
+          <div class="thumbs">
+            <img class="selected" src="images/review/review1.jpg" alt="리뷰 사진 1">
+            <img src="images/review/review3.jpg" alt="리뷰 사진 2">
+          </div>
+        </section>
+
+        <!-- 리뷰 정보 -->
+        <article class="detail-info">
+          <div class="profile">
+            <div class="profile">
+              <span class="avatar" style="--avatar: #f2e6c9"></span>
+              <div>
+                <p class="name">student02</p>
+                <p class="date">2026.11.08 작성</p>
+              </div>
+            </div>
+            <span class="badge-verified"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>구매 인증</span>
+          </div>
+
+          <div class="detail-rating">
+            <span class="stars" style="--rating: 5" aria-label="별점 5점"></span>
+            <b>5.0</b>
+            <span>최고예요</span>
+          </div>
+
+          <h1>실물 색감이 사진이랑 똑같아요</h1>
+          <p class="text">노란 꽃잎이랑 초록 잎 색감이 사진 그대로예요. 가방에 달았더니 친구들이 어디서 샀냐고 계속 물어봐요.<br><br>코도 촘촘해서 오래 쓸 수 있을 것 같아요. 고리도 튼튼해서 열쇠랑 같이 달아도 걱정 없어요. 다음에는 다른 색으로 하나 더 사고 싶어요.</p>
+
+          <div class="tags"><span class="tag">사진과 색감이 같아요</span><span class="tag">마감이 꼼꼼해요</span></div>
+
+          <dl class="evaluation">
+            <div><dt>색감</dt><dd>사진과 같아요</dd></div>
+            <div><dt>크기</dt><dd>사진과 같아요</dd></div>
+            <div><dt>마감</dt><dd>꼼꼼해요</dd></div>
+          </dl>
+
+          <div class="reactions">
+            <span>이 리뷰가 도움이 됐나요?</span>
+            <button type="button" class="helpful active"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>도움돼요 24</button>
+            <button type="button" class="report">신고</button>
+          </div>
+
+          <div class="reviewed-product">
+            <img src="images/review/product.jpg" alt="뜨개 꽃 키링">
+            <div class="info">
+              <small>리뷰한 작품</small>
+              <p class="name">뜨개 꽃 키링</p>
+              <p class="meta">8,000원 · @ewha_creator02</p>
+            </div>
+            <a href="templates/product_detail.html" class="btn">작품 보기</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- 이 작품의 다른 리뷰 -->
+      <section class="other-reviews">
+        <div class="section-title">
+          <h2>이 작품의 다른 리뷰<span class="count">5</span></h2>
+          <a href="review_list.html" class="more-link">전체 리뷰 보기<svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+        </div>
+        <div class="other-grid">
+          <a href="review_detail.html" class="other-card">
+            <img class="cover" src="images/review/review2.jpg" alt="리뷰 사진">
+            <div class="content">
+              <span class="stars" style="--rating: 5" aria-label="별점 5점"></span>
+              <h3>선물용으로 딱이에요</h3>
+              <p>상자랑 리본까지 예쁘게 포장돼서 따로 포장할 필요가 없었어요.</p>
+              <small>student05 · 2026.11.07</small>
+            </div>
+          </a>
+          <a href="review_detail.html" class="other-card">
+            <div class="no-photo"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/><path d="M3 3l18 18"/></svg>사진이 없는 리뷰예요</div>
+            <div class="content">
+              <span class="stars" style="--rating: 4" aria-label="별점 4점"></span>
+              <h3>생각보다 조금 작지만 귀여워요</h3>
+              <p>사진보다 한 뼘 정도 작지만 키링으로 쓰기엔 오히려 딱 좋은 크기예요.</p>
+              <small>student03 · 2026.11.06</small>
+            </div>
+          </a>
+          <a href="review_detail.html" class="other-card">
+            <img class="cover" src="images/review/review4.jpg" alt="리뷰 사진">
+            <div class="content">
+              <span class="stars" style="--rating: 5" aria-label="별점 5점"></span>
+              <h3>두 번째 구매예요</h3>
+              <p>처음 산 키링이 너무 마음에 들어서 동생 것까지 하나 더 샀어요.</p>
+              <small>student07 · 2026.11.05</small>
+            </div>
+          </a>
+        </div>
+      </section>
+  </main>
+
+  <!-- ===== 공통 푸터 ===== -->
+  <footer class="site-footer">
+    <div class="container">깃든마켓</div>
+  </footer>
+</body>
+</html>

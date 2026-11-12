@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 등록하기 | 깃든 마켓</title>
+    <link rel="stylesheet" href="../static/css/product.css" />
+    <link rel="stylesheet" href="../static/css/market-header.css" />
+    <link rel="stylesheet" href="../static/css/product-register.css" />
+  </head>
+  <body class="register-page">
+    <main>
+      <div class="pg">
+        <header class="market-header market-header--register">
+          <div class="market-header-top">
+            <a class="market-logo" href="../product_list.html">깃든마켓</a>
+            <div class="market-search">
+              <input type="search" placeholder="머그가 필요한 순간" aria-label="작품 검색" />
+              <img src="../static/images/product-register/search.svg" alt="" />
+            </div>
+            <span class="market-trending">
+              <strong>2</strong> 뜨개 키링
+              <img src="../static/images/product-register/trending-chevron.svg" alt="" />
+            </span>
+            <nav class="market-account" aria-label="계정">
+              <span class="market-shortcut"><img src="../assets/heart.svg" alt="" />관심</span>
+              <span class="market-shortcut"><img src="../assets/user.svg" alt="" />내 정보</span>
+              <span class="market-shortcut"><img src="../assets/cart.svg" alt="" />장바구니</span>
+              <a class="market-sign-in" href="login.html">로그아웃</a>
+            </nav>
+          </div>
+        </header>
+
+        <div class="pg-back">
+          <a href="#leave-modal">
+            <img src="../static/images/product-register/return.svg" alt="" />
+            돌아가기
+          </a>
+        </div>
+
+        <div class="pg-head">
+          <h1>상품 등록하기</h1>
+          <p>판매할 상품의 정보와 사진을 입력해주세요.</p>
+        </div>
+
+        <!-- 등록 실패 안내 — 필요할 때만 아래 블록의 주석을 풀어 표시하세요 -->
+        <!--
+        <div class="pg-notice" role="alert">
+          <strong>등록하지 못했어요</strong>
+          <span>안내가 표시된 항목을 확인한 뒤 다시 등록해 주세요.</span>
+        </div>
+        -->
+
+        <!-- 정적 과제 화면입니다. 등록 버튼은 예시 결과 화면으로 이동합니다. -->
+        <form class="pg-form">
+          <div class="pg-grid">
+            <!-- ===== 왼쪽: 입력 폼 ===== -->
+            <div class="pg-card">
+              <div class="pg-field">
+                <label class="pg-label" for="seller_id">판매자 ID *</label>
+                <div class="pg-control">
+                  <input
+                    class="pg-input"
+                    type="text"
+                    id="seller_id"
+                    name="seller_id"
+                    value="ewha_creator02"
+                    placeholder="판매자 ID를 입력해주세요."
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="pg-field">
+                <label class="pg-label" for="product_name">제목 *</label>
+                <div class="pg-control">
+                  <input
+                    class="pg-input"
+                    type="text"
+                    id="product_name"
+                    name="product_name"
+                    placeholder="제목을 입력해주세요."
+                    required
+                  />
+                  <!-- 오류 예: <input class="pg-input is-invalid"> + <p class="pg-error">제목을 입력해 주세요.</p> -->
+                </div>
+              </div>
+
+              <div class="pg-field">
+                <label class="pg-label" for="price">가격 *</label>
+                <div class="pg-control">
+                  <input
+                    class="pg-input"
+                    type="number"
+                    id="price"
+                    name="price"
+                    min="0"
+                    placeholder="가격을 입력해주세요."
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="pg-field">
+                <label class="pg-label" for="address">거래 희망 장소 *</label>
+                <div class="pg-control">
+                  <div class="pg-input-icon">
+                    <img src="../static/images/product-register/pin.svg" alt="" />
+                    <input
+                      class="pg-input"
+                      type="text"
+                      id="address"
+                      name="address"
+                      placeholder="직접 입력하기"
+                      required
+                    />
+                  </div>
+                  <p class="pg-help">
+                    직접 입력하거나, 오른쪽 지도에서 핀을 찍어 선택할 수 있어요.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pg-field">
+                <label class="pg-label" for="status">상품 상태 *</label>
+                <div class="pg-control">
+                  <select class="pg-select" id="status" name="status" required>
+                    <option value="새 상품">새 상품</option>
+                    <option value="거의 새 상품">거의 새 상품</option>
+                    <option value="사용감 있음">사용감 있음</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="pg-field">
+                <label class="pg-label" for="description">상품 설명 *</label>
+                <div class="pg-control">
+                  <textarea
+                    class="pg-textarea"
+                    id="description"
+                    name="description"
+                    placeholder="상품 설명을 입력해주세요."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="pg-field">
+                <span class="pg-label">커미션 수락</span>
+                <div class="pg-control">
+                  <label class="pg-switch">
+                    <input type="checkbox" name="commission" value="1" />
+                    <span class="pg-track" aria-hidden="true"></span>
+                    <span class="pg-switch-text">
+                      <span class="pg-off">커미션을 받지 않아요</span>
+                      <span class="pg-on">커미션을 받아요</span>
+                    </span>
+                  </label>
+                  <p class="pg-help">
+                    구매자가 이 상품을 바탕으로 주문 제작(커미션)을 요청할 수
+                    있어요.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pg-field pg-field--picture">
+                <label class="pg-label" for="picture">사진 *</label>
+                <div class="pg-control">
+                  <div class="pg-file-picker">
+                    <input
+                      class="pg-file"
+                      type="file"
+                      id="picture"
+                      name="picture"
+                      accept=".png,.jpg,.jpeg,.webp"
+                      aria-describedby="picture-help"
+                      multiple
+                      required
+                    />
+                    <span class="pg-file-button" aria-hidden="true">파일 선택</span>
+                    <span class="pg-file-empty" aria-hidden="true">선택된 파일 없음</span>
+                    <span class="pg-file-selected" aria-hidden="true">사진이 선택되었어요</span>
+                    <span class="pg-file-count" aria-hidden="true">0 / 5</span>
+                  </div>
+                  <div class="pg-thumbs">
+                    <label class="pg-add-photo" for="picture">
+                      <img src="../static/images/product-register/add-photo.svg" alt="사진 추가" />
+                    </label>
+                  </div>
+                  <p class="pg-help" id="picture-help">
+                    첫 번째 사진이 대표 사진이 돼요. (최대 5장 · JPG, PNG, WebP
+                    · 장당 5MB)
+                  </p>
+                </div>
+              </div>
+
+              <div class="pg-actions">
+                <a class="pg-btn pg-btn--dark pg-btn--block" href="product_result.html">
+                  등록하기
+                </a>
+              </div>
+            </div>
+
+            <!-- ===== 오른쪽: 지도에서 선택하기 (선택 사항) ===== -->
+            <aside
+              class="pg-card pg-map-panel"
+              aria-label="지도에서 거래 희망 장소 선택"
+            >
+              <div>
+                <h2>지도에서 선택하기</h2>
+                <p class="pg-help">
+                  핀을 찍으면 거래 희망 장소가 자동으로 입력돼요. (선택)
+                </p>
+              </div>
+
+              <div class="pg-map pg-register-map">
+                <div class="pg-map-drawing" aria-hidden="true">
+                  <img class="pg-map-road-bottom" src="../static/images/product-register/road-horizontal.svg" alt="" />
+                  <img class="pg-map-road-left" src="../static/images/product-register/road-vertical.svg" alt="" />
+                  <img class="pg-map-road-right" src="../static/images/product-register/road-vertical.svg" alt="" />
+                  <div class="pg-campus-boundary"></div>
+                  <img class="pg-map-path-cross" src="../static/images/product-register/path-horizontal.svg" alt="" />
+                  <img class="pg-map-path-west" src="../static/images/product-register/path-vertical.svg" alt="" />
+                  <img class="pg-map-path-east" src="../static/images/product-register/path-vertical.svg" alt="" />
+                  <img class="pg-map-lawn" src="../static/images/product-register/lawn.svg" alt="" />
+                  <img class="pg-map-pond" src="../static/images/product-register/pond.svg" alt="" />
+                  <div class="pg-campus-building pg-campus-west"></div>
+                  <div class="pg-campus-building pg-campus-hakmun">학문관</div>
+                  <div class="pg-campus-building pg-campus-ecc">ECC</div>
+                  <div class="pg-campus-building pg-campus-hall">대강당</div>
+                  <div class="pg-campus-building pg-campus-south"></div>
+                  <span class="pg-campus-name">이화여대 캠퍼스</span>
+                  <span class="pg-campus-gate">정문</span>
+                </div>
+                <div class="pg-zoom" aria-hidden="true">
+                  <button type="button" disabled>+</button>
+                  <button type="button" disabled>−</button>
+                </div>
+                <span class="pg-map-hint">원하면 지도를 눌러 핀을 찍어보세요.</span>
+                <span class="pg-map-note">캠퍼스 밖에는 핀을 찍을 수 없어요.</span>
+              </div>
+
+              <div class="pg-selected">
+                <img src="../static/images/product-register/pin.svg" alt="" />
+                <div>
+                  <strong>선택한 장소가 없어요.</strong>
+                  <span>핀을 찍지 않고 직접 입력해도 돼요.</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </form>
+
+        <!-- ===== 모달: 나가기 확인 (돌아가기를 누르면 열림) ===== -->
+        <div
+          class="pg-modal"
+          id="leave-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="leave-title"
+        >
+          <div class="pg-modal-box">
+            <a class="pg-modal-x" href="#" aria-label="닫기"
+              ><svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="#191919"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M1 1l10 10M11 1L1 11" /></svg
+            ></a>
+            <h2 id="leave-title">작성 중인 내용이 사라져요</h2>
+            <p>지금 나가면 입력한 내용과 사진이 저장되지 않아요.</p>
+            <div class="pg-modal-btns">
+              <a class="pg-btn pg-btn--outline" href="#">계속 작성하기</a>
+              <a class="pg-btn pg-btn--dark" href="../product_list.html">나가기</a>
+            </div>
+          </div>
+        </div>
+        <footer class="pg-register-footer">깃든마켓</footer>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 | 깃든마켓</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body class="page-logo-only">
+    <main class="signup-main">
+      <section class="signup" aria-labelledby="signup-title">
+        <div class="signup-brand">
+          <a class="signup-brand__logo" href="product_list.html">깃든마켓</a>
+          <p class="signup-brand__desc">대학생 창작자의 작품을 만나는 곳</p>
+        </div>
+        <h1 class="signup-heading" id="signup-title">깃든마켓 회원가입</h1>
+        <form class="signup-form" action="#" method="post">
+          <div class="signup-fields">
+            <div class="field">
+              <label class="field__label" for="user-id"
+                >아이디 <span class="field__required">*</span></label
+              >
+              <div class="field__row">
+                <input
+                  class="input"
+                  id="user-id"
+                  name="id"
+                  type="text"
+                  placeholder="아이디를 입력해 주세요"
+                />
+                <button class="btn-check" type="button">중복확인</button>
+              </div>
+              <p class="field__helper">영문·숫자·밑줄 4~20자</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="user-pw"
+                >비밀번호 <span class="field__required">*</span></label
+              >
+              <div class="input-with-icon">
+                <input
+                  class="input"
+                  id="user-pw"
+                  name="pw"
+                  type="password"
+                  placeholder="비밀번호 (15~64자)"
+                />
+                <img src="assets/eye-off.svg" width="20" height="20" alt="" />
+              </div>
+              <div class="input-with-icon">
+                <input
+                  class="input"
+                  id="user-pw-confirm"
+                  name="pw_confirm"
+                  type="password"
+                  placeholder="비밀번호 확인"
+                  aria-label="비밀번호 확인"
+                />
+                <img src="assets/eye-off.svg" width="20" height="20" alt="" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="user-email"
+                >이메일 <span class="field__required">*</span></label
+              >
+              <input
+                class="input"
+                id="user-email"
+                name="email"
+                type="text"
+                placeholder="이메일을 입력해 주세요"
+              />
+              <p class="field__helper">인증 및 비밀번호 찾기에 사용됩니다</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="user-phone"
+                >전화번호 (선택)</label
+              >
+              <input
+                class="input"
+                id="user-phone"
+                name="phone"
+                type="tel"
+                placeholder="'-' 없이 숫자만 입력해 주세요"
+              />
+            </div>
+          </div>
+
+          <div class="signup-actions">
+            <button class="btn-submit" type="submit">회원가입하기</button>
+            <p class="signup-switch">
+              이미 계정이 있으신가요? <a href="templates/login.html">로그인</a>
+            </p>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
