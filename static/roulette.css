@@ -1,0 +1,77 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #222222;
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+/* 오늘의 룰렛 페이지 전체 영역 */
+.roulette-page {
+  width: 442px;
+  max-width: 100%;
+  margin: 28px auto 72px auto;
+  text-align: center;
+  color: #222222;
+}
+
+/* 제목 */
+.roulette-page h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.roulette-subtitle {
+  margin: 6px 0 10px 0;
+  font-size: 11px;
+  color: #888888;
+}
+
+/* 룰렛 이미지 */
+.roulette-img {
+  display: block;
+  width: 442px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 안내 문구 */
+.roulette-message {
+  margin: 8px 0 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 룰렛 돌리기 버튼 */
+.roulette-button {
+  display: block;
+  width: 176px;
+  height: 36px;
+  margin: 0 auto;
+  border: 1px solid #a6a6a6;
+  background-color: #ffffff;
+  font-size: 11px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.roulette-button:hover {
+  border-color: #b87959;
+  background-color: #fffaf2;
+}
+
+/* 하단 문구 */
+.roulette-hint {
+  margin: 9px 0 0 0;
+  font-size: 10px;
+  color: #777777;
+}

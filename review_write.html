@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리뷰 작성 | 깃든마켓</title>
+  <link rel="stylesheet" href="css/review.css">
+</head>
+<body class="review-page">
+  <!-- ===== 공통 헤더 ===== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="product_list.html" class="logo">깃든마켓</a>
+        <form class="search" action="#" role="search">
+          <input type="search" name="q" placeholder="머그가 필요한 순간" aria-label="작품 검색">
+          <button type="submit" aria-label="검색"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
+        </form>
+        <div class="popular"><b>2</b> 뜨개 키링 <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></div>
+        <nav class="header-menu" aria-label="내 메뉴">
+          <a href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>관심</a>
+          <a href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>내 정보</a>
+          <a href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>장바구니</a>
+          <span class="divider"></span>
+          <a href="login.html">로그인</a>
+        </nav>
+      </div>
+      <div class="header-bottom">
+        <a href="#" class="all-category"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>전체 카테고리</a>
+        <span class="divider"></span>
+        <nav class="category-nav" aria-label="카테고리">
+          <a href="product_list.html" class="active">추천 작품</a>
+          <a href="#">주제별 모음</a>
+          <a href="#">아티클</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+      <nav class="breadcrumb" aria-label="현재 위치">
+        <a href="#">홈</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <a href="#">마이페이지</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <a href="#">구매 내역</a>
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        <span class="current">리뷰 작성</span>
+      </nav>
+
+      <div class="page-title">
+        <h1>리뷰 작성</h1>
+        <p>작품을 받아 본 경험을 다른 구매자와 작가에게 들려주세요.</p>
+      </div>
+
+      <div class="write-layout">
+        <!-- 리뷰 작성 폼
+             지금은 필수 항목을 다 채우고 '리뷰 등록하기'를 누르면 등록 완료 모달(#review-done)이 떠요.
+             Flask에 연결할 때: method="post" enctype="multipart/form-data" action="리뷰 저장 주소" 로 바꿔 주세요.
+             등록 중에는 form에 class="is-submitting"을 붙이면 버튼이 회색으로 바뀌어요.
+             입력 오류 표시(빨간 글씨)는 Flask에서 붙일 수 있게 CSS만 준비돼 있어요:
+               폼 맨 위 <div class="error-notice"><strong>리뷰를 등록하지 못했어요</strong>...</div>
+               칸에 class="input-box is-error", 칸 아래 <p class="error-text">리뷰 제목을 입력해 주세요.</p> -->
+        <form class="write-form" action="review_write.html#review-done" method="get">
+
+          <!-- 리뷰할 작품 (주문 내역에서 자동으로 채워지는 부분) -->
+          <div class="order-card">
+            <img src="images/review/product.jpg" alt="뜨개 꽃 키링">
+            <div class="info">
+              <p class="seller">@ewha_creator02</p>
+              <p class="name">뜨개 꽃 키링</p>
+              <p class="option">새 상품 · 1개</p>
+            </div>
+            <p class="status">2026.11.02 구매<b>거래 완료</b></p>
+          </div>
+
+          <!-- 별점 -->
+          <fieldset class="field">
+            <legend>작품은 어떠셨나요? <span class="required">필수</span></legend>
+            <div class="rating-field">
+              <div class="rating-input" role="radiogroup" aria-label="별점">
+                <input class="visually-hidden" type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5" title="5점"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></label>
+                <input class="visually-hidden" type="radio" id="star4" name="rating" value="4" required>
+                <label for="star4" title="4점"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></label>
+                <input class="visually-hidden" type="radio" id="star3" name="rating" value="3" required>
+                <label for="star3" title="3점"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></label>
+                <input class="visually-hidden" type="radio" id="star2" name="rating" value="2" required>
+                <label for="star2" title="2점"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></label>
+                <input class="visually-hidden" type="radio" id="star1" name="rating" value="1" required>
+                <label for="star1" title="1점"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></label>
+              </div>
+              <div class="rating-text">
+                <strong>별점을 선택해 주세요</strong>
+                <span>별을 눌러 1~5점 중에서 골라 주세요.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 세부 평가 -->
+          <fieldset class="field">
+            <legend>세부 평가 <span class="required">필수</span><span class="optional">항목마다 하나씩 골라 주세요</span></legend>
+          <div class="choice-row">
+            <span class="row-label">색감</span>
+            <div class="segmented" role="radiogroup" aria-label="색감">
+              <input class="visually-hidden" type="radio" id="color1" name="color" value="사진과 같아요" required>
+              <label for="color1">사진과 같아요</label>
+              <input class="visually-hidden" type="radio" id="color2" name="color" value="조금 달라요" required>
+              <label for="color2">조금 달라요</label>
+              <input class="visually-hidden" type="radio" id="color3" name="color" value="많이 달라요" required>
+              <label for="color3">많이 달라요</label>
+            </div>
+          </div>
+          <div class="choice-row">
+            <span class="row-label">크기</span>
+            <div class="segmented" role="radiogroup" aria-label="크기">
+              <input class="visually-hidden" type="radio" id="size1" name="size" value="생각보다 커요" required>
+              <label for="size1">생각보다 커요</label>
+              <input class="visually-hidden" type="radio" id="size2" name="size" value="사진과 같아요" required>
+              <label for="size2">사진과 같아요</label>
+              <input class="visually-hidden" type="radio" id="size3" name="size" value="생각보다 작아요" required>
+              <label for="size3">생각보다 작아요</label>
+            </div>
+          </div>
+          <div class="choice-row">
+            <span class="row-label">마감</span>
+            <div class="segmented" role="radiogroup" aria-label="마감">
+              <input class="visually-hidden" type="radio" id="finish1" name="finish" value="꼼꼼해요" required>
+              <label for="finish1">꼼꼼해요</label>
+              <input class="visually-hidden" type="radio" id="finish2" name="finish" value="보통이에요" required>
+              <label for="finish2">보통이에요</label>
+              <input class="visually-hidden" type="radio" id="finish3" name="finish" value="아쉬워요" required>
+              <label for="finish3">아쉬워요</label>
+            </div>
+          </div>
+          </fieldset>
+
+          <!-- 키워드 -->
+          <fieldset class="field">
+            <legend>이런 점이 좋았어요 <span class="optional">선택 · 최대 3개</span></legend>
+            <div class="keyword-choices">
+            <input class="visually-hidden" type="checkbox" id="kw1" name="keywords" value="사진과 색감이 같아요">
+            <label for="kw1">사진과 색감이 같아요</label>
+            <input class="visually-hidden" type="checkbox" id="kw2" name="keywords" value="마감이 꼼꼼해요">
+            <label for="kw2">마감이 꼼꼼해요</label>
+            <input class="visually-hidden" type="checkbox" id="kw3" name="keywords" value="선물용으로 좋아요">
+            <label for="kw3">선물용으로 좋아요</label>
+            <input class="visually-hidden" type="checkbox" id="kw4" name="keywords" value="포장이 예뻐요">
+            <label for="kw4">포장이 예뻐요</label>
+            <input class="visually-hidden" type="checkbox" id="kw5" name="keywords" value="크기가 딱 좋아요">
+            <label for="kw5">크기가 딱 좋아요</label>
+            <input class="visually-hidden" type="checkbox" id="kw6" name="keywords" value="약속을 잘 지켜요">
+            <label for="kw6">약속을 잘 지켜요</label>
+            <input class="visually-hidden" type="checkbox" id="kw7" name="keywords" value="재구매하고 싶어요">
+            <label for="kw7">재구매하고 싶어요</label>
+            <input class="visually-hidden" type="checkbox" id="kw8" name="keywords" value="작가님이 친절해요">
+            <label for="kw8">작가님이 친절해요</label>
+            </div>
+            <p class="help">마음에 든 점을 최대 3개까지 골라 주세요.</p>
+          </fieldset>
+
+          <!-- 제목 -->
+          <div class="field">
+            <label class="field-title" for="title">리뷰 제목 <span class="required">필수</span></label>
+            <div class="input-box">
+              <input type="text" id="title" name="title" maxlength="100" placeholder="예: 실물 색감이 사진이랑 똑같아요" required>
+              <span class="counter">최대 100자</span>
+            </div>
+          </div>
+
+          <!-- 내용 -->
+          <div class="field">
+            <label class="field-title" for="content">리뷰 내용 <span class="required">필수</span></label>
+            <div class="textarea-box">
+              <textarea id="content" name="content" minlength="20" maxlength="2000" placeholder="작품의 색감, 크기, 마감은 어땠나요?&#10;다른 구매자에게 도움이 되도록 자세히 적어 주세요." required></textarea>
+              <div class="textarea-foot"><span>20자 이상 써 주세요</span><span>최대 2,000자</span></div>
+            </div>
+          </div>
+
+          <!-- 사진 -->
+          <div class="field">
+            <p class="field-title">사진 첨부 <span class="optional">선택 · 최대 5장</span></p>
+            <label class="upload" for="photos">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              사진 추가
+              <small>최대 5장</small>
+            </label>
+            <input class="visually-hidden" type="file" id="photos" name="photos" accept="image/jpeg,image/png,image/webp" multiple>
+            <p class="help">JPG, PNG, WebP · 장당 5MB까지 · 사진 리뷰는 다른 구매자에게 더 큰 도움이 돼요</p>
+          </div>
+
+          <div class="form-actions">
+            <a href="#leave-confirm" class="btn">취소</a>
+            <button type="submit" class="btn btn-dark">리뷰 등록하기</button>
+          </div>
+        </form>
+
+        <!-- 오른쪽 안내 -->
+        <aside class="guide">
+          <div class="mission-box">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
+            <div><small>리뷰 미션</small><strong>리뷰를 등록하면 룰렛 뽑기권 1장을 드려요</strong></div>
+          </div>
+          <div class="guide-box">
+            <h2><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>리뷰 작성 안내</h2>
+            <ul>
+              <li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>작품과 관련 없는 내용이나 욕설이 담긴 리뷰는 숨김 처리될 수 있어요.</li>
+              <li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>등록한 리뷰는 마이페이지 &gt; 내 리뷰에서 고치거나 지울 수 있어요.</li>
+              <li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>리뷰에 올린 사진은 작품 상세 페이지의 사진 리뷰에도 함께 보여요.</li>
+            </ul>
+          </div>
+          <div class="guide-box guide-tip">
+            <h2><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>이런 내용이 도움이 돼요</h2>
+            <ul>
+              <li>· 실물 색감이 사진과 같은지</li>
+              <li>· 크기가 생각했던 것과 어땠는지</li>
+              <li>· 선물했다면 받은 사람의 반응</li>
+              <li>· 오래 써 보니 어떤지</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+  </main>
+
+  <!-- 리뷰 등록 완료 모달 (리뷰 미션 완료 → 뽑기권 지급) -->
+  <div class="modal" id="review-done" role="dialog" aria-modal="true" aria-labelledby="done-title">
+    <div class="modal-box center">
+      <a href="#" class="modal-close" aria-label="닫기"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></a>
+      <h2 id="done-title">리뷰가 등록되었어요!</h2>
+      <p>리뷰 미션을 완료해서 룰렛 뽑기권 1장을<br>받았어요. 지금 바로 룰렛을 돌려 보세요.</p>
+      <div class="ticket"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg><div><small>LUCKY TICKET</small><strong>룰렛 뽑기권 × 1</strong></div></div>
+      <div class="modal-actions">
+        <a href="review_detail.html" class="pill">내 리뷰 보기</a>
+        <a href="roulette.html" class="pill pill-dark">룰렛 돌리러 가기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 나가기 확인 모달 ('취소'를 누르면 떠요) -->
+  <div class="modal" id="leave-confirm" role="dialog" aria-modal="true" aria-labelledby="leave-title">
+    <div class="modal-box">
+      <a href="#" class="modal-close" aria-label="닫기"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></a>
+      <h2 id="leave-title">작성 중인 리뷰가 사라져요</h2>
+      <p>지금 나가면 입력한 별점과 내용, 사진이<br>저장되지 않아요.</p>
+      <div class="modal-actions">
+        <a href="#" class="pill">계속 작성하기</a>
+        <a href="review_list.html" class="pill pill-dark">나가기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 공통 푸터 ===== -->
+  <footer class="site-footer">
+    <div class="container">깃든마켓</div>
+  </footer>
+</body>
+</html>

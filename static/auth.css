@@ -1,0 +1,123 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #333333;
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+h1, p {
+  margin: 0;
+}
+
+button, input {
+  font: inherit;
+}
+
+/* 깃든마켓 로그인 */
+.auth-card {
+  max-width: 520px;
+  margin: 80px auto 35px auto;
+  text-align: center;
+  font-size: 16px;
+  color: #333333;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.auth-subtitle {
+  font-size: 16px;
+  color: #888888;
+  margin-top: 8px;
+}
+
+.auth-divide {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  margin: 50px auto 20px auto;
+  font-size: 13px;
+  color: #333333;
+}
+
+.auth-divide .line {
+  flex: 1;
+  border-bottom: 1px solid #888888;
+  margin: 0 14px;
+}
+
+/* 로그인 폼 전체 영역 가운데 정렬 */
+.auth-form {
+  width: 360px;
+  margin: 0 auto;
+}
+
+/* 입력 항목 간격 */
+.form-field {
+  margin-bottom: 20px;
+}
+
+/* label */
+.form-field label {
+  text-align: left;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+/* 입력창 */
+.form-field input {
+  width: 100%;
+  height: 46px;
+  padding: 0 12px;
+  border: 1px solid #888888;
+  font-size: 13px;
+}
+
+/* 오류 안내 문구 */
+.error-msg {
+  text-align: left;
+  color: #d9534f;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+/* 제출 버튼 */
+.auth-form button {
+  width: 100%;
+  height: 46px;
+  margin-top: 15px;
+  background-color: #ffffff;
+  border: 1px solid #333333;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* switch */
+.auth-switch {
+  width: 360px;
+  margin: 18px auto 80px auto;
+  text-align: center;
+  font-size: 12px;
+  color: #666666;
+}
+
+/* switch 링크 */
+.switch-link {
+  color: #333333;
+  text-decoration: underline;
+  margin-left: 4px;
+}
