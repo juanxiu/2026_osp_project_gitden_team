@@ -9,8 +9,11 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
     <link rel="stylesheet" href="commission_request.css" />
+    <link rel="stylesheet" href="static/css/preview-dialog.css" />
+    <script src="static/js/product-preview.js" defer></script>
+    <script src="static/js/commission-preview.js" defer></script>
   </head>
-  <body>
+  <body data-product-page="commission">
     <!-- 공통 헤더 (로그인 후) -->
     <header class="site-header">
       <div class="header-top">
@@ -76,15 +79,15 @@
       <section class="product">
         <h2 class="product-title">구매할 작품</h2>
         <div class="product-card">
-          <a href="templates/product_detail.html"
-            ><img src="images/linen_pouch.png" alt="린넨 스트링 파우치"
+          <a href="templates/product_detail.html?product=linen" data-product-link
+            ><img src="images/linen_pouch.png" alt="린넨 스트링 파우치" data-product-image
           /></a>
           <div class="product-info">
-            <p class="seller">@linen_sori</p>
+            <p class="seller" data-product-field="handle">@linen_sori</p>
             <p class="name">
-              <a href="templates/product_detail.html">린넨 스트링 파우치</a>
+              <a href="templates/product_detail.html?product=linen" data-product-link data-product-field="name">린넨 스트링 파우치</a>
             </p>
-            <p class="price">16,000원</p>
+            <p class="price" data-product-field="price">16,000원</p>
             <p class="qty">2개</p>
           </div>
         </div>
@@ -93,7 +96,7 @@
       <!-- 오른쪽: 요청 폼 -->
       <section class="request">
         <h1 class="form-title">
-          <strong>@linen_sori</strong> 님에게 요청사항 남기기
+          <strong data-product-field="handle">@linen_sori</strong> 님에게 요청사항 남기기
         </h1>
 
         <p class="notice">
@@ -155,12 +158,24 @@
               <span>이미지 추가</span>
             </label>
             <p class="hint">최대 3장까지 올릴 수 있어요.</p>
+            <p class="request-error" role="alert"></p>
           </div>
 
-          <button type="submit" class="submit">요청 저장하기</button>
+          <button type="submit" class="submit" aria-haspopup="dialog">요청 저장하기</button>
         </form>
       </section>
     </main>
+
+    <dialog class="preview-dialog" id="commission-confirmation" aria-labelledby="commission-confirmation-title">
+      <h2 id="commission-confirmation-title">커미션 요청 저장 완료</h2>
+      <p><strong data-product-field="name">린넨 스트링 파우치</strong>에 남긴 요청이에요.</p>
+      <p class="commission-request-preview"></p>
+      <p class="preview-dialog-note">시연용 완료 화면이에요.</p>
+      <form class="preview-dialog-actions" method="dialog">
+        <a class="preview-dialog-button" href="templates/product_detail.html?product=linen" data-product-link>상품 상세로</a>
+        <button class="preview-dialog-button preview-dialog-primary" autofocus>확인</button>
+      </form>
+    </dialog>
 
     <footer class="site-footer">
       <span>깃든마켓</span>

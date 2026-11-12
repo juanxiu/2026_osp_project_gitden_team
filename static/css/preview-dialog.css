@@ -1,0 +1,69 @@
+.preview-dialog {
+  box-sizing: border-box;
+  width: min(420px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  padding: 32px;
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+  color: #191919;
+  text-align: center;
+}
+
+.preview-dialog::backdrop {
+  background: rgb(0 0 0 / 50%);
+}
+
+.preview-dialog h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.preview-dialog p {
+  margin: 12px 0 0;
+  color: #595959;
+  line-height: 1.5;
+}
+
+.preview-dialog .preview-dialog-note {
+  font-size: 14px;
+}
+
+.preview-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0 0;
+}
+
+.preview-dialog .preview-dialog-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 1 1 130px;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid #767671;
+  border-radius: 999px;
+  background: #fff;
+  color: #191919;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.preview-dialog .preview-dialog-primary {
+  border-color: #2c2c2c;
+  background: #2c2c2c;
+  color: #fff;
+}
+
+.preview-dialog-button:focus-visible {
+  outline: 2px solid #191919;
+  outline-offset: 3px;
+}
