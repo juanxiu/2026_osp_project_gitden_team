@@ -8,6 +8,45 @@
     <link rel="stylesheet" href="../static/roulette.css">
 </head>
 <body>
+    <!-- 공통 헤더 (로그인 후) -->
+    <header class="site-header">
+        <div class="header-top">
+            <a class="logo" href="../product_list.html">깃든마켓</a>
+
+            <form class="header-search" role="search">
+                <input type="search" placeholder="머그가 필요한 순간" aria-label="작품 검색">
+                <button type="submit" aria-label="검색">
+                    <img src="../assets/search.svg" width="16" height="16" alt="">
+                </button>
+            </form>
+
+            <a class="header-trending" href="#">
+                <span class="header-trending__rank">2</span>
+                <span>뜨개 키링</span>
+                <img src="../assets/chevron-down.svg" width="12" height="12" alt="">
+            </a>
+
+            <nav class="header-account" aria-label="계정">
+                <a class="nav-icon-link" href="#"><img src="../assets/heart.svg" width="20" height="20" alt="">관심</a>
+                <a class="nav-icon-link" href="#"><img src="../assets/user.svg" width="20" height="20" alt="">내 정보</a>
+                <a class="nav-icon-link" href="#"><img src="../assets/cart.svg" width="20" height="20" alt="">장바구니</a>
+                <span class="header-user">깃든님</span>
+                <a class="header-logout" href="login.html">로그아웃</a>
+            </nav>
+        </div>
+
+        <nav class="header-bottom" aria-label="작품 탐색">
+            <a class="header-category" href="#"><img src="../assets/grid.svg" width="16" height="16" alt="">전체 카테고리</a>
+            <span class="divider-vertical"></span>
+            <div class="header-menu">
+                <a class="is-active" href="../product_list.html">추천 작품</a>
+                <a href="#">주제별 모음</a>
+                <a href="#">아티클</a>
+                <a class="header-menu__roulette" href="roulette.html">오늘의 룰렛</a>
+            </div>
+        </nav>
+    </header>
+
     <main>
         <section class="roulette-page">
             <h1>오늘의 룰렛</h1>
@@ -21,5 +60,9 @@
             <p class="roulette-hint">꽝 또는 꾸미기 아이템 중 하나를 만나요.</p>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <span>깃든마켓</span>
+    </footer>
 </body>
 </html>
