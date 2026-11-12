@@ -3,6 +3,7 @@
 }
 
 .register-page .pg {
+  box-sizing: border-box;
   max-width: 1328px;
   padding-bottom: 0;
 }
@@ -11,8 +12,14 @@
   height: 49px;
 }
 
-.register-page .pg-card {
-  padding-bottom: 34px;
+@media (min-width: 1001px) {
+  .register-page .pg-grid {
+    min-height: 880px;
+  }
+
+  .register-page .pg-form .pg-card {
+    padding: 31px 31px 33px;
+  }
 }
 
 .register-page .pg-help {
@@ -116,8 +123,8 @@
   display: inline;
 }
 
-.register-page .pg-map-panel {
-  padding: 24px;
+.register-page .pg-form .pg-map-panel {
+  padding: 23px;
 }
 
 .register-page .pg-register-map {
@@ -169,7 +176,8 @@
 }
 
 .pg-campus-building {
-  padding: 28px 20px 0;
+  padding: 28px 0 0 20px;
+  white-space: nowrap;
   border-radius: 8px;
   background: #c3d6bf;
 }
@@ -213,7 +221,7 @@
     padding-inline: 16px;
   }
 
-  .register-page .pg-map-panel {
+  .register-page .pg-form .pg-map-panel {
     padding: 16px;
   }
 
